@@ -12,11 +12,13 @@ import mocha from 'gulp-mocha';
   gulp.task('babel', () => {
     gulp.src(src)
       .pipe(plumber())
+      .pipe(eslint())
+      .pipe(eslint.format())
+      .pipe(eslint.failOnError())
       .pipe(babel())
       .pipe(rename((path) => {
         path.basename = path.basename.match(/^[^.]+/)[0];
       }))
-      .pipe(rename({extname: '.js'}))
       .pipe(gulp.dest(dest));
   });
 }
