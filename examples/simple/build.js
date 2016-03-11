@@ -8,4 +8,7 @@ ports.on(lll.WILL_RENDER, (content) => {
   return marked(content);
 });
 
-lll(bases, ports);
+lll(bases, ports)
+  .then((contents) => {
+    console.log(contents);
+  })
