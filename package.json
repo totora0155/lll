@@ -19,7 +19,7 @@
     "babel-register": "^6.7.2",
     "babel-runtime": "^6.5.0",
     "chai": "^3.5.0",
-    "eslint": "^2.3.0",
+    "eslint": "^2.2.0",
     "glob": "^7.0.3",
     "gray-matter": "^2.0.2",
     "gulp": "^3.9.1",

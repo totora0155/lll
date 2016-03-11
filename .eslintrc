@@ -4,7 +4,7 @@
     "browser": true,
     "node": true,
     "mocha": true
-  }
+  },
   "rules": {
     "max-len": [1, 80, 4],
     "max-depth": [2, 3],
