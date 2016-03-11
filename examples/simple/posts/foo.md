@@ -1,6 +1,6 @@
 ---
 name: foo
-parent: base
+parent: entry
 title: 'foo'
 ---
 
