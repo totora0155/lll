@@ -3,7 +3,9 @@ const marked = require('marked');
 const divide = require('html-divide');
 
 const bases = new lll.Renderer('bases/**/*.html');
-const ports = new lll.Renderer('posts/**/*.md');
+const ports = new lll.Renderer('posts/**/*.md', {
+  dest: 'build',
+});
 
 bases.on(lll.WILL_RENDER, (content, data) => {
   const divided = divide(content);
@@ -18,6 +20,6 @@ ports.on(lll.WILL_RENDER, (content) => {
 });
 
 lll(bases, ports)
-  .then((contents) => {
-    console.log(contents);
+  .then((files) => {
+    console.log(files[0].contents.toString());
   })

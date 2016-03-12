@@ -2,11 +2,15 @@
   "name": "lll",
   "version": "1.0.0",
   "dependencies": {
+    "glob": "^7.0.3",
+    "glob2base": "0.0.12",
+    "gray-matter": "^2.0.2",
     "hogan.js": "^3.0.2",
     "keymirror": "^0.1.1",
-    "glob": "^7.0.3",
-    "gray-matter": "^2.0.2",
-    "thenify": "^3.2.0"
+    "lodash.escaperegexp": "^4.1.1",
+    "mkdirp": "^0.5.1",
+    "thenify": "^3.2.0",
+    "vinyl": "^1.1.1"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.0-beta.5",
@@ -29,7 +33,7 @@
     "gulp-mocha": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
-    "mocha": "^2.4.5",
+    "mocha": "^2.4.5"
   },
   "keywords": [],
   "license": "ISC",
