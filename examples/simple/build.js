@@ -22,6 +22,5 @@ ports.on(lll.WILL_RENDER, (content) => {
 
 lll(bases, ports)
   .then((files) => {
-    console.log(files[0].path);
-    console.log(files[0].contents.toString());
+    files.forEach(f => console.log(f.path))
   })
