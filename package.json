@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "dependencies": {
     "hogan.js": "^3.0.2",
-    "keymirror": "^0.1.1"
+    "keymirror": "^0.1.1",
+    "glob": "^7.0.3",
+    "gray-matter": "^2.0.2",
+    "thenify": "^3.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.0-beta.5",
@@ -20,8 +23,6 @@
     "babel-runtime": "^6.5.0",
     "chai": "^3.5.0",
     "eslint": "^2.2.0",
-    "glob": "^7.0.3",
-    "gray-matter": "^2.0.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-eslint": "^2.0.0",
@@ -29,7 +30,6 @@
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "mocha": "^2.4.5",
-    "thenify": "^3.2.0"
   },
   "keywords": [],
   "license": "ISC",
