@@ -4,6 +4,7 @@ const divide = require('html-divide');
 
 const bases = new lll.Renderer('bases/**/*.html');
 const ports = new lll.Renderer('posts/**/*.md', {
+  extname: '.html',
   dest: 'build',
 });
 
