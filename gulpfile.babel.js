@@ -12,20 +12,23 @@ import mocha from 'gulp-mocha';
   gulp.task('babel', () => {
     gulp.src(src)
       .pipe(plumber())
-      .pipe(eslint())
-      .pipe(eslint.format())
-      .pipe(eslint.failOnError())
       .pipe(babel())
       .pipe(rename((path) => {
         path.basename = path.basename.match(/^[^.]+/)[0];
       }))
       .pipe(gulp.dest(dest));
   });
+
+  gulp.task('lint', () => {
+    gulp.src(src)
+      .pipe(eslint())
+      .pipe(eslint.format())
+  });
 }
 
 {
   const src = 'lib/**/*.js';
-  gulp.task('watch', ['babel'], () => {
+  gulp.task('watch', ['lint', 'babel'], () => {
     gulp.watch(src, ['babel']);
   });
 }
