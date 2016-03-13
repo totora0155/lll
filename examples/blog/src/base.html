@@ -8,7 +8,12 @@ name: base
   <meta charset="UTF-8">
   <link rel="stylesheet" href="/styles/venders/normalize.css">
   <link rel="stylesheet" href="/styles/index.css">
-  <title>{{title}}</title>
+  {{#title}}
+    <title>{{title}} | {{siteName}}</title>
+  {{/title}}
+  {{^title}}
+    <title>{{siteName}}</title>
+  {{/title}}
   {{&header}}
 </head>
 <body>
