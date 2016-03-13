@@ -1,0 +1,85 @@
+html {
+  font: 17px/1.6 YuGothic,"游ゴシック","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","メイリオ","Meiryo","ＭＳ Ｐゴシック",Osaka,sans-serif;
+  background: #f8f8f8;
+}
+
+body {
+  min-height: 100vh;
+}
+
+footer {
+  padding: .5rem;
+  background: #373737;
+  text-align: center;
+  color: #f8f8f8;
+}
+
+aside {
+  flex: 0 0 10em;
+  padding-right: 2rem;
+}
+
+main {
+  flex-basis: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+section {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.layout--container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.layout--wrapper {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.breadclumb__box {
+  text-align: right;
+  margin-top: .5rem;
+}
+
+.breadclumb__list {
+  display: inline-block;
+  overflow: hidden;
+  font-size: .85em;
+  text-align: right;
+}
+
+.breadclumb__item {
+  float: left;
+}
+
+.breadclumb__item + .breadclumb__item:before {
+  content: ">>";
+  font-size: .85em;
+  margin: 0 .5em;
+}
+
+.side__list {
+  border-right: 1px solid #ccc;
+  line-height: 2;
+}
