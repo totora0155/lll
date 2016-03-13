@@ -1,0 +1,32 @@
+---
+name: entry
+parent: base
+---
+
+<article>
+  <header>
+    <h2><a href="{{url}}">{{title}}</a></h2>
+  </header>
+  <div>
+    {{&contents}}
+  </div>
+</article>
+
+<!-- divide:breadclumb -->
+<nav class="breadclumb__box">
+  <ul class="breadclumb__list">
+    <li class="breadclumb__item"><a href="/">TOP</a></li>
+    <li class="breadclumb__item">{{title}}</li>
+  </ul>
+</nav>
+<!-- enddivide -->
+
+<!-- divide:side -->
+<ul class="side__list">
+  {{#items}}
+    <li>
+      <a href="">{{title}}</a>
+    </li>
+  {{/items}}
+</ul>
+<!-- enddivide -->

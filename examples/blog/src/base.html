@@ -1,0 +1,37 @@
+---
+name: base
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/styles/venders/normalize.css">
+  <link rel="stylesheet" href="/styles/index.css">
+  <title>{{title}}</title>
+  {{&header}}
+</head>
+<body>
+
+  <div class="layout--container">
+
+    {{&breadclumb}}
+
+    <header>
+      <h1><a href="/">The lll blog</a></h1>
+    </header>
+
+    <div class="layout--wrapper">
+      <aside class="side__box">
+        {{&side}}
+      </aside>
+      {{&contents}}
+    </div>
+  </div>
+
+  <footer>
+    <small>© 2016 nju33</small>
+  </footer>
+
+</body>
+</html>

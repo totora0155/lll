@@ -1,0 +1,26 @@
+---
+name: list
+parent: base
+---
+
+<main>
+  {{#items}}
+    <section>
+      <header>
+        <h2><a href="{{url}}">{{title}}</a></h2>
+      </header>
+      {{&body}}
+      <a class="" href="{{url}}">Read more</a>
+    </section>
+  {{/items}}
+</main>
+
+<!-- divide:side -->
+<ul class="side__list">
+  {{#items}}
+    <li>
+      <a href="{{url}}">{{title}}</a>
+    </li>
+  {{/items}}
+</ul>
+<!-- enddivide -->
