@@ -19,18 +19,13 @@ posts.on(lll.WILL_RENDER, (contents) => {
   return marked(contents);
 });
 
-entry.on(lll.WILL_RENDER, ((posts, contents, data) => {
-  data.items = getItems(posts.templates);
-  const divided = divide(contents);
-  data.breadclumb = divided.breadclumb;
-  data.side = divided.side;
-  return divided.content;
-}).bind(null, posts));
-
-index.on(lll.WILL_RENDER, ((posts, contents, data) => {
+lll.all(entry, index).on(lll.WILL_RENDER, ((posts, contents, data) => {
   data.items = getItems(posts.templates);
   const divided = divide(contents);
   data.side = divided.side;
+  if (divided.breadclumb) {
+    data.breadclumb = divided.breadclumb;
+  }
   return divided.content;
 }).bind(null, posts));
 
