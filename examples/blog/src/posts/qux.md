@@ -2,6 +2,10 @@
 name: qux
 parent: entry
 title: qux
+category: qux
+tag:
+  - aaa
+  - bbb
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae reiciendis, alias doloribus illum magnam ducimus eveniet consectetur iure mollitia dicta eaque, facilis, quas tempore placeat. Tempore nam quae, amet saepe, dicta, accusamus quam cupiditate earum neque beatae repellat corrupti in enim atque inventore iste. Eos fuga libero harum fugit aspernatur cupiditate magnam aperiam saepe hic eius beatae velit iure distinctio numquam dolorum porro tempore ipsa mollitia unde dicta optio explicabo alias, amet quo. Exercitationem fugiat consequatur repellat, similique. Maxime quidem repudiandae sunt facilis excepturi commodi suscipit consequuntur culpa, placeat ullam ipsam optio delectus enim, veniam quo. Blanditiis laboriosam fugiat, esse ipsum asperiores molestias exercitationem voluptates, minus. Repellat qui recusandae aspernatur doloremque? Odit expedita sequi fugit porro rem nam adipisci fuga.

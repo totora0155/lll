@@ -14,5 +14,8 @@
     "html-divide": "^0.1.2",
     "marked": "^0.3.5",
     "vinyl-fs": "^2.4.2"
+  },
+  "dependencies": {
+    "lodash": "^4.6.1"
   }
 }
