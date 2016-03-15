@@ -20,14 +20,23 @@ const index = new lll.Renderer('src/index.html', {
   cleanURL: true,
 });
 
-categories.on(lll.READY, (renderer) => {
+categories.on(lll.READY, (categories) => {
   const grouped = _.groupBy(posts.templates, (template) => {
     return template.data.category;
   });
 
-  const basic = renderer.templates.categoryBase;
+  const basic = categories.templates.categoryBase;
   const templates = lll.Renderer.createTemplateWithBasic(basic, grouped);
   categories.templates = templates;
+});
+
+categories.on(lll.WILL_RENDER, (contents, data) => {
+  data.items = _.map(data.items, (item) => {
+    return {
+      title: item.data.title,
+    };
+  });
+  return contents;
 });
 
 posts.on(lll.WILL_RENDER, (contents) => {
@@ -48,7 +57,6 @@ lll.all(entry, index).on(lll.WILL_RENDER, ((posts, contents, data) => {
 
 lll(base, posts, entry, index, categories)
   .then((files) => {
-    debugger;
     es.readArray(files)
       .pipe(vfs.dest('public'));
   })

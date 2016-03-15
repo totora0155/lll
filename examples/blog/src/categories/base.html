@@ -2,12 +2,13 @@
 parent: base
 name: categoryBase
 title: :name
+items: :items
 ---
 
 <h2>Categories</h2>
 
 <section>
-  header<<title>{{title}</title>
+  <h3>{{title}}</h3>
   {{#items}}
     <p>{{title}}</p>
   {{/items}}
