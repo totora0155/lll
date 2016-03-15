@@ -1,0 +1,17 @@
+---
+parent: base
+name: categoryBase
+title: :name
+items: :items
+---
+
+<section role="listitem">
+  <h3>Categories</h3>
+  <ul>
+    {{#items}}
+      <li>
+        <a>{{title}}</p>
+      </li>
+    {{/items}}
+  </ul>
+</section>
