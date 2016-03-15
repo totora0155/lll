@@ -20,12 +20,14 @@ const index = new lll.Renderer('src/index.html', {
   cleanURL: true,
 });
 
-categories.on(lll.DID_LOAD, () => {
+categories.on(lll.READY, (renderer) => {
   const grouped = _.groupBy(posts.templates, (template) => {
     return template.data.category;
   });
 
-  categories.templates = grouped.forEach(categories.createTempalte);
+  const basic = renderer.templates.categoryBase;
+  const templates = lll.Renderer.createTemplateWithBasic(basic, grouped);
+  categories.templates = templates;
 });
 
 posts.on(lll.WILL_RENDER, (contents) => {
@@ -44,7 +46,7 @@ lll.all(entry, index).on(lll.WILL_RENDER, ((posts, contents, data) => {
   return divided.content;
 }).bind(null, posts));
 
-lll(base, posts, entry, index)
+lll(base, posts, entry, index, categories)
   .then((files) => {
     debugger;
     es.readArray(files)
