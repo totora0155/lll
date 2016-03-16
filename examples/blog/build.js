@@ -5,7 +5,11 @@ const marked = require('marked');
 const divide = require('html-divide');
 const _ = require('lodash');
 
+const sidebar = new lll.Component('src/components/sidebar/**/*.html');
 const base = new lll.Renderer('src/base.html');
+
+// base.on(lll.READY, (base) => {
+// });
 // const posts = new lll.Renderer('src/posts/**/*.md', {
 //   base: 'src',
 //   extname: '.html',
@@ -16,6 +20,7 @@ const base = new lll.Renderer('src/base.html');
 //   cleanURL: true,
 // });
 // const entry = new lll.Renderer('src/entry.html');
+
 const index = new lll.Renderer('src/index.html', {
   cleanURL: true,
 });
@@ -58,7 +63,7 @@ index.on(lll.WILL_RENDER, (contents, data) => {
 });
 
 // lll(base, posts, entry, index, categories)
-lll(base, index)
+lll(sidebar, base, index)
   .then((files) => {
     es.readArray(files)
       .pipe(vfs.dest('public'));
