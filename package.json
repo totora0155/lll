@@ -40,7 +40,7 @@
   "license": "ISC",
   "main": "index.js",
   "scripts": {
-    "run": "gulp babel",
+    "build": "gulp babel",
     "start": "gulp watch",
     "test": "ava"
   }
