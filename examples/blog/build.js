@@ -5,7 +5,7 @@ const marked = require('marked');
 const divide = require('html-divide');
 const _ = require('lodash');
 
-const sidebar = new lll.Partial('src/components/sidebar/*.html');
+const sidebar = new lll.Partial('src/partials/sidebar/*.html');
 const base = new lll.Renderer('src/base.html');
 const posts = new lll.Renderer('src/posts/**/*.md', {
   base: 'src',
@@ -74,7 +74,7 @@ function getItems(templates) {
     return {
       title: t.data.title,
       body: t.contents.slice(0, t.contents.indexOf('<!-- more -->')),
-      url: '/' + t.file.relative,
+      url: t.getURL(),
     };
   });
 }
