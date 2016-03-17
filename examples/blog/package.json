@@ -4,8 +4,7 @@
   "scripts": {
     "build": "node build.js",
     "prestart": "npm run build",
-    "start": "chokidar src/**/*.{html,md} -c 'npm run build'",
-    "test": "ava"
+    "start": "chokidar src/**/*.{html,md} -c 'npm run build'"
   },
   "author": "nju33",
   "license": "CC0-1.0",

@@ -42,6 +42,6 @@
   "scripts": {
     "run": "gulp babel",
     "start": "gulp watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
   }
 }
