@@ -5,7 +5,7 @@ const marked = require('marked');
 const divide = require('html-divide');
 const _ = require('lodash');
 
-const sidebar = new lll.Component('src/components/sidebar/**/*.html');
+const sidebar = new lll.Partial('src/components/sidebar/**/*.html');
 const base = new lll.Renderer('src/base.html');
 
 // base.on(lll.READY, (base) => {
@@ -65,6 +65,7 @@ index.on(lll.WILL_RENDER, (contents, data) => {
 // lll(base, posts, entry, index, categories)
 lll(sidebar, base, index)
   .then((files) => {
+    debugger;
     es.readArray(files)
       .pipe(vfs.dest('public'));
   })
