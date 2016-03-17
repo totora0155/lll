@@ -5,6 +5,7 @@ const marked = require('marked');
 const divide = require('html-divide');
 const _ = require('lodash');
 
+const sidebar = new lll.Partial('src/partials/sidebar/*.html');
 const base = new lll.Renderer('src/base.html');
 const posts = new lll.Renderer('src/posts/**/*.md', {
   base: 'src',
@@ -16,11 +17,12 @@ const categories = new lll.Renderer('src/categories/**/*.html', {
   cleanURL: true,
 });
 const entry = new lll.Renderer('src/entry.html');
+
 const index = new lll.Renderer('src/index.html', {
   cleanURL: true,
 });
 
-categories.on(lll.READY, (categories) => {
+categories.on(lll.READY, ((posts, categories) => {
   const grouped = _.groupBy(posts.templates, (template) => {
     return template.data.category;
   });
@@ -28,7 +30,7 @@ categories.on(lll.READY, (categories) => {
   const basic = categories.templates.categoryBase;
   const templates = lll.Renderer.createTemplateWithBasic(basic, grouped);
   categories.templates = templates;
-});
+}).bind(null, posts));
 
 categories.on(lll.WILL_RENDER, (contents, data) => {
   data.items = _.map(data.items, (item) => {
@@ -55,8 +57,9 @@ lll.all(entry, index).on(lll.WILL_RENDER, ((posts, contents, data) => {
   return divided.content;
 }).bind(null, posts));
 
-lll(base, posts, entry, index, categories)
+lll(sidebar, base, posts, entry, index, categories)
   .then((files) => {
+    debugger;
     es.readArray(files)
       .pipe(vfs.dest('public'));
   })
@@ -71,7 +74,7 @@ function getItems(templates) {
     return {
       title: t.data.title,
       body: t.contents.slice(0, t.contents.indexOf('<!-- more -->')),
-      url: '/' + t.file.relative,
+      url: t.getURL(),
     };
   });
 }
