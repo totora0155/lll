@@ -72,7 +72,7 @@ function getItems(templates) {
   return keys.map((key) => {
     const t = posts.templates[key];
     return {
-      title: t.data.title,
+      title: t.getTitle(),
       body: t.contents.slice(0, t.contents.indexOf('<!-- more -->')),
       url: t.getURL(),
     };
