@@ -3,4 +3,9 @@ module.exports = {
   description: 'blog by the lll',
   keywords: ['static site', 'blog', 'lll'],
   another: 'nju33',
+
+  token: {
+    header: '<!-- head -->',
+    breaker: '<!-- break -->',
+  }
 };
