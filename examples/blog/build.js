@@ -73,7 +73,7 @@ function getItems(templates) {
     const t = posts.templates[key];
     return {
       title: t.getTitle(),
-      body: t.contents.slice(0, t.contents.indexOf('<!-- more -->')),
+      body: t.getHeadContents(),
       url: t.getURL(),
     };
   });

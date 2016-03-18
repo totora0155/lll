@@ -5,7 +5,7 @@ module.exports = {
   another: 'nju33',
 
   token: {
-    header: '<!-- head -->',
+    header: '<!-- more -->',
     breaker: '<!-- break -->',
   }
 };
