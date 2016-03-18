@@ -43,5 +43,8 @@
     "build": "gulp babel",
     "start": "gulp watch",
     "test": "ava"
+  },
+  "ava": {
+    "babel": "inherit"
   }
 }
