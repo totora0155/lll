@@ -48,9 +48,7 @@ posts.on(lll.WILL_RENDER, (contents) => {
 lll.all(entry, index).on(lll.WILL_RENDER, ((posts, contents, data) => {
   data.items = getItems(posts.templates);
   data.categories = getCategories(posts.templates);
-  data.categorieNames = Object.keys(data.categories);
   const divided = divide(contents);
-  data.side = divided.side;
   if (divided.breadclumb) {
     data.breadclumb = divided.breadclumb;
   }
@@ -72,15 +70,36 @@ function getItems(templates) {
   return keys.map((key) => {
     const t = posts.templates[key];
     return {
-      title: t.getTitle(),
-      body: t.getHeadContents(),
+      title: t.data.title,
+      body: t.contents.slice(0, t.contents.indexOf('<!-- more -->')),
       url: t.getURL(),
     };
   });
 }
 
 function getCategories(templates) {
-  return _.groupBy(templates, (template) => {
-    return template.data.category;
-  });
+  return _.chain(templates)
+          .transform((result, t, name) => {
+            if (Array.isArray(t.data.category)) {
+              _.forEach(t.data.category, (category) => {
+                if (!result[category]) {
+                  result[category] = [];
+                }
+                result[category].push({
+                  title: t.getTitle(),
+                });
+              });
+            } else {
+              if (!result[t.data.category]) {
+                result[t.data.category] = [];
+              }
+              result[t.data.category].push({
+                title: t.getTitle(),
+              });
+            }
+          }, {})
+        .map((items, category) => {
+          return {category, items}
+        })
+        .value();
 }
