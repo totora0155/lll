@@ -70,9 +70,9 @@ function getItems(templates) {
   return keys.map((key) => {
     const t = posts.templates[key];
     return {
-      title: t.data.title,
-      body: t.contents.slice(0, t.contents.indexOf('<!-- more -->')),
-      url: t.getURL(),
+      title: t.title,
+      body: t.headContents,
+      url: t.url,
     };
   });
 }
@@ -86,7 +86,7 @@ function getCategories(templates) {
                   result[category] = [];
                 }
                 result[category].push({
-                  title: t.getTitle(),
+                  title: t.title,
                 });
               });
             } else {
@@ -94,7 +94,7 @@ function getCategories(templates) {
                 result[t.data.category] = [];
               }
               result[t.data.category].push({
-                title: t.getTitle(),
+                title: t.title,
               });
             }
           }, {})

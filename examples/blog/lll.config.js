@@ -4,6 +4,7 @@ module.exports = {
   keywords: ['static site', 'blog', 'lll'],
   another: 'nju33',
 
+  separator: '|',
   token: {
     header: '<!-- more -->',
     breaker: '<!-- break -->',
