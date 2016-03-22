@@ -79,8 +79,7 @@ function getItems(templates) {
 }
 
 function getCategories(templates) {
-  const arr = _.map(templates, t => t);
-  const grouped = groupFrom(arr, 'data.categories');
+  const grouped = groupFrom(templates, 'data.categories');
   return _.map(grouped, (items, name) => {
     return {items, name};
   });
