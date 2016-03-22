@@ -2,7 +2,8 @@
 name: foo
 parent: entry
 title: foo
-category: foo
+categories:
+  - foo
 tag:
   - aaa
   - bbb

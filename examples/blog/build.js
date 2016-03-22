@@ -3,6 +3,7 @@ const es = require('event-stream');
 const vfs = require('vinyl-fs');
 const marked = require('marked');
 const divide = require('html-divide');
+const groupFrom = require('group-from');
 const _ = require('lodash');
 
 const sidebar = new lll.Partial('src/partials/sidebar/*.html');
@@ -78,28 +79,9 @@ function getItems(templates) {
 }
 
 function getCategories(templates) {
-  return _.chain(templates)
-          .transform((result, t, name) => {
-            if (Array.isArray(t.data.category)) {
-              _.forEach(t.data.category, (category) => {
-                if (!result[category]) {
-                  result[category] = [];
-                }
-                result[category].push({
-                  title: t.title,
-                });
-              });
-            } else {
-              if (!result[t.data.category]) {
-                result[t.data.category] = [];
-              }
-              result[t.data.category].push({
-                title: t.title,
-              });
-            }
-          }, {})
-        .map((items, category) => {
-          return {category, items}
-        })
-        .value();
+  const arr = _.map(templates, t => t);
+  const grouped = groupFrom(arr, 'data.categories');
+  return _.map(grouped, (items, name) => {
+    return {items, name};
+  });
 }

@@ -2,7 +2,8 @@
 name: baz
 parent: entry
 title: baz
-category: baz
+categories:
+  - baz
 tag:
   - aaa
   - bbb

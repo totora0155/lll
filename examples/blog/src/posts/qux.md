@@ -2,7 +2,8 @@
 name: qux
 parent: entry
 title: qux
-category: qux
+categories:
+  - qux
 tag:
   - aaa
   - bbb
