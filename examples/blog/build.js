@@ -6,7 +6,7 @@ const divide = require('html-divide');
 const groupFrom = require('group-from');
 const _ = require('lodash');
 
-const sidebar = new lll.Partial('src/partials/sidebar/*.html');
+// const sidebar = new lll.Partial('src/partials/sidebar/*.html');
 const base = new lll.Renderer('src/base.html');
 const posts = new lll.Renderer('src/posts/**/*.md', {
   base: 'src',
@@ -56,7 +56,8 @@ lll.all(entry, index).on(lll.WILL_RENDER, ((posts, contents, data) => {
   return divided.content;
 }).bind(null, posts));
 
-lll(sidebar, base, posts, entry, index, categories)
+// lll(sidebar, base, posts, entry, index, categories)
+lll(base, posts, entry, index, categories)
   .then((files) => {
     debugger;
     es.readArray(files)
