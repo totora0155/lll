@@ -30,31 +30,40 @@ categories.on(lll.READY, () => {
   categories.templates = templates;
 });
 
-categories.on(lll.WILL_RENDER, (contents, data) => {
-  data.items = _.map(data.items, (item) => {
-    return {
-      title: item.data.title,
-    };
-  });
-  return contents;
-});
+// categories.on(lll.WILL_RENDER, (contents, data) => {
+//   debugger;
+//   data.items = _.map(data.items, (item) => {
+//     return {
+//       title: item.data.title,
+//     };
+//   });
+//   return contents;
+// });
 
 posts.on(lll.WILL_RENDER, (contents) => {
   return marked(contents);
 });
 
-lll.all(entry, index).on(lll.WILL_RENDER, ((posts, contents, data) => {
-  data.items = getItems(posts.templates);
-  data.categories = getCategories(posts.templates);
+lll.all(entry, index).on(lll.WILL_RENDER, (contents, data) => {
+  posts.state.categories.forEach((group) => {
+    group.items.forEach((template) => {
+      const dirname = template.file.dirname.replace('posts', 'category');
+      template.file.dirname = dirname;
+    });
+  });
+  data.state.posts = _.map(posts.templates, (template) => {
+    return template;
+  });
+  data.state.categories = posts.state.categories;
+  debugger;
   const divided = divide(contents);
   if (divided.breadclumb) {
     data.breadclumb = divided.breadclumb;
   }
   return divided.content;
-}).bind(null, posts));
+});
 
 lll(sidebar, base, posts, entry, index, categories)
-// lll(sidebar, base, posts, entry, index)
   .then((files) => {
     debugger;
     es.readArray(files)
