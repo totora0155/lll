@@ -13,7 +13,7 @@ const posts = new lll.Renderer('src/posts/**/*.md', {
   extname: '.html',
   cleanURL: true,
 });
-const categories = new lll.Renderer('src/categories/**/*.html', {
+const category = new lll.Renderer('src/category/**/*.html', {
   base: 'src',
   cleanURL: true,
 });
@@ -23,11 +23,11 @@ const index = new lll.Renderer('src/index.html', {
   cleanURL: true,
 });
 
-categories.on(lll.READY, () => {
-  const basic = categories.templates.categoryBase;
+category.on(lll.READY, () => {
+  const basic = category.templates.categoryBase;
   const group = posts.state.categories;
   const templates = lll.Renderer.createTemplateWithBasic(basic, group);
-  categories.templates = templates;
+  category.templates = templates;
 });
 
 posts.on(lll.WILL_RENDER, (contents) => {
@@ -54,7 +54,7 @@ lll.all(entry, index).on(lll.WILL_RENDER, (contents, data) => {
   return divided.content;
 });
 
-lll(sidebar, base, entry, index, posts, categories)
+lll(sidebar, base, entry, index, posts, category)
   .then((files) => {
     debugger;
     es.readArray(files)
