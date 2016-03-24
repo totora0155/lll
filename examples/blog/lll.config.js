@@ -4,6 +4,11 @@ module.exports = {
   keywords: ['static site', 'blog', 'lll'],
   another: 'nju33',
 
+  groups: [
+    'categories',
+    'tags',
+  ],
+
   separator: '|',
   token: {
     header: '<!-- more -->',

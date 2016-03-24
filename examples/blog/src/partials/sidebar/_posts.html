@@ -5,11 +5,10 @@ name: sidebar:posts
 <section role="listitem">
   <h3>Posts</h3>
   <ul class="side__list">
-    {{!TODO: items -> post.items}}
-    {{#items}}
+    {{#state.posts}}
       <li>
         <a href="{{url}}">{{title}}</a>
       </li>
-    {{/items}}
+    {{/state.posts}}
   </ul>
 </section>
