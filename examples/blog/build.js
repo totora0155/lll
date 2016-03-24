@@ -1,37 +1,20 @@
 const lll = require('../..');
-const es = require('event-stream');
-const vfs = require('vinyl-fs');
+const _ = require('lodash');
 const marked = require('marked');
 const divide = require('html-divide');
-const groupFrom = require('group-from');
-const _ = require('lodash');
+// TODO
+const vfs = require('vinyl-fs');
+const es = require('event-stream');
 
 const sidebar = new lll.Partial('src/partials/sidebar/*.html');
 const base = new lll.Renderer('src/base.html');
+const entry = new lll.Renderer('src/entry.html');
+const index = new lll.Renderer('src/index.html');
 const posts = new lll.Renderer('src/posts/**/*.md', {
   base: 'src',
-  extname: '.html',
-  cleanURL: true,
 });
 const category = new lll.Renderer('src/category/**/*.html', {
   base: 'src',
-  cleanURL: true,
-});
-const entry = new lll.Renderer('src/entry.html');
-
-const index = new lll.Renderer('src/index.html', {
-  cleanURL: true,
-});
-
-category.on(lll.READY, () => {
-  const basic = category.templates.categoryBase;
-  const group = posts.state.categories;
-  const templates = lll.Renderer.createTemplateWithBasic(basic, group);
-  category.templates = templates;
-});
-
-posts.on(lll.WILL_RENDER, (contents) => {
-  return marked(contents);
 });
 
 lll.all(entry, index).on(lll.WILL_RENDER, (contents, data) => {
@@ -53,6 +36,15 @@ lll.all(entry, index).on(lll.WILL_RENDER, (contents, data) => {
   }
   return divided.content;
 });
+
+category.on(lll.READY, () => {
+  const basic = category.templates.categoryBase;
+  const group = posts.state.categories;
+  const templates = lll.Renderer.createTemplateWithBasic(basic, group);
+  category.templates = templates;
+});
+
+posts.on(lll.WILL_RENDER, marked);
 
 lll(sidebar, base, entry, index, posts, category)
   .then((files) => {
