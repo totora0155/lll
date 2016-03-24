@@ -3,7 +3,7 @@
   "env": {
     "browser": true,
     "node": true,
-    "mocha": true
+    "es6": true
   },
   "rules": {
     "max-len": [1, 80, 4],
@@ -23,6 +23,8 @@
     "comma-style": [2, "last"],
     "eol-last": 2,
 
-    "jsx-quotes": [2, "prefer-double"]
+    "jsx-quotes": [2, "prefer-double"],
+
+    "generator-star-spacing": [2, {"before": false, "after": true}]
   }
 }
