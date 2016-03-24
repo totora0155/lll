@@ -23,15 +23,8 @@ index.on(lll.WILL_RENDER, (contents, data) => {
 });
 
 lll.all(entry, index).on(lll.WILL_RENDER, (contents, data) => {
-  const postsClone = posts.clone();
-
-  postsClone.state.categories.forEach((group) => {
-    group.url = group.items[0].url.replace('posts', 'category');
-  });
-  data.state.posts = _.map(posts.templates, (template) => {
-    return template;
-  });
-  data.state.categories = postsClone.state.categories;
+  data.state.posts = posts.templates;
+  data.state.categories = posts.state.categories;
   const divided = divide(contents);
   if (divided.breadclumb) {
     data.breadclumb = divided.breadclumb;
