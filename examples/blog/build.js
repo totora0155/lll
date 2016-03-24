@@ -43,7 +43,7 @@ lll.all(entry, index).on(lll.WILL_RENDER, (contents, data) => {
       template.file.dirname = dirname;
     });
   });
-  data.state.posts = _.map(postsClone.templates, (template) => {
+  data.state.posts = _.map(posts.templates, (template) => {
     return template;
   });
   data.state.categories = postsClone.state.categories;
