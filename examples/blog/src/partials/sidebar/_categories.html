@@ -7,11 +7,9 @@ name: sidebar:categories
   <ul>
     {{!TODO: items -> category.items}}
     {{#state.categories}}
-      {{#items}}
-        <li>
-          <a href="{{url}}">{{name}}</a>
-        </li>
-      {{/items}}
+      <li>
+        <a href="{{url}}">{{name}}</a>
+      </li>
     {{/state.categories}}
   </ul>
 </section>
