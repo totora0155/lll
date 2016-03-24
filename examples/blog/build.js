@@ -63,22 +63,3 @@ lll(sidebar, base, entry, index, posts, category)
   .catch((err) => {
     console.error(err);
   })
-
-function getItems(templates) {
-  const keys = Object.keys(templates);
-  return keys.map((key) => {
-    const t = posts.templates[key];
-    return {
-      title: t.title,
-      body: t.headContents,
-      url: t.url,
-    };
-  });
-}
-
-function getCategories(templates) {
-  const grouped = groupFrom(templates, 'data.categories');
-  return _.map(grouped, (items, name) => {
-    return {items, name};
-  });
-}
