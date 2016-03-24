@@ -30,32 +30,23 @@ categories.on(lll.READY, () => {
   categories.templates = templates;
 });
 
-// categories.on(lll.WILL_RENDER, (contents, data) => {
-//   debugger;
-//   data.items = _.map(data.items, (item) => {
-//     return {
-//       title: item.data.title,
-//     };
-//   });
-//   return contents;
-// });
-
 posts.on(lll.WILL_RENDER, (contents) => {
   return marked(contents);
 });
 
 lll.all(entry, index).on(lll.WILL_RENDER, (contents, data) => {
-  posts.state.categories.forEach((group) => {
+  const postsClone = posts.clone();
+
+  postsClone.state.categories.forEach((group) => {
     group.items.forEach((template) => {
       const dirname = template.file.dirname.replace('posts', 'category');
       template.file.dirname = dirname;
     });
   });
-  data.state.posts = _.map(posts.templates, (template) => {
+  data.state.posts = _.map(postsClone.templates, (template) => {
     return template;
   });
-  data.state.categories = posts.state.categories;
-  debugger;
+  data.state.categories = postsClone.state.categories;
   const divided = divide(contents);
   if (divided.breadclumb) {
     data.breadclumb = divided.breadclumb;
@@ -63,7 +54,7 @@ lll.all(entry, index).on(lll.WILL_RENDER, (contents, data) => {
   return divided.content;
 });
 
-lll(sidebar, base, posts, entry, index, categories)
+lll(sidebar, base, entry, index, posts, categories)
   .then((files) => {
     debugger;
     es.readArray(files)
