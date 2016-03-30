@@ -12,6 +12,7 @@ const entry = new lll.Renderer('src/entry.html');
 const index = new lll.Renderer('src/index.html');
 const posts = new lll.Renderer('src/posts/**/*.md', {
   base: 'src',
+  sort: ['qux', 'baz', 'bar', 'foo'],
 });
 const category = new lll.Renderer('src/category/**/*.html', {
   base: 'src',
