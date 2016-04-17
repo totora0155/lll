@@ -1,7 +1,7 @@
 module.exports = {
-  siteName: 'The lll blog',
-  description: 'blog by the lll',
-  keywords: ['static site', 'blog', 'lll'],
+  siteName: 'Docs',
+  description: 'docs',
+  keywords: [],
   another: 'nju33',
 
   groups: [

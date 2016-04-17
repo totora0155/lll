@@ -1,0 +1,27 @@
+---
+parent: root
+name: pageBase
+---
+
+<article>
+  <header>
+    <h1><a href="{{url}}">{{title}}</a></h1>
+  </header>
+  <div>
+    {{&contents}}
+  </div>
+  <footer>
+    <aside class="pager__box">
+      {{#rel.prev}}
+        <div class="pager__prev">
+          <a href="{{url}}">{{title}}</a>
+        </div>
+      {{/rel.prev}}
+      {{#rel.next}}
+        <div class="pager__next">
+          <a href="{{url}}">{{title}}</a>
+        </div>
+      {{/rel.next}}
+    </aside>
+  </footer>
+</article>

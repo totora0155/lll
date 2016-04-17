@@ -1,0 +1,138 @@
+html {
+  font: 15px/1.6 YuGothic,"游ゴシック","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","メイリオ","Meiryo","ＭＳ Ｐゴシック",Osaka,sans-serif;
+  background: #f8f8f8;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  color: #434343;
+}
+
+aside {
+  flex: 0 0 10em;
+  padding-right: 2rem;
+}
+
+main {
+  flex-basis: 100%;
+}
+
+main h1 {
+  font-size: 2.1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+section {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+pre {
+  overflow: auto;
+}
+
+.header__box {
+  background: #373737;
+}
+
+.header__box nav {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 900px) {
+  .header__box nav {
+    width: 900px;
+  }
+}
+
+.header__box nav h1 {
+  padding: 1rem .5em;
+  margin: 0 auto;
+  color: #f8f8f8;
+  font-size: 1em;
+}
+
+.layout--main {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 900px) {
+  .layout--main {
+    width: 900px;
+  }
+}
+
+.nav__box {
+  flex: 0 0 30%;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.contents__box {
+  flex: 0 0 70%;
+  padding-bottom: 5em;
+  overflow: hidden;
+}
+
+.contents__box pre {
+  background: #414141;
+  color: #f8f8f8;
+  padding: 1rem;
+}
+
+.pager__box {
+  display: flex;
+}
+
+.pager__prev {
+  flex-grow: 1;
+}
+
+.pager__prev a:before {
+  content:"\00ab";
+}
+
+.pager__next {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.pager__next a:after {
+  content:"\00bb";
+}
+
+.footer__box {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: .5rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 900px) {
+  .footer__box {
+  }
+}
