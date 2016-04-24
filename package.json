@@ -17,6 +17,7 @@
     "order-align": "^0.1.1",
     "redux": "^3.5.1",
     "redux-thunk": "^2.0.1",
+    "strman": "^1.0.1",
     "thenify": "^3.2.0",
     "vinyl": "^1.1.1",
     "vinyl-fs": "^2.4.3",

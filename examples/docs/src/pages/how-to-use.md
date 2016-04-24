@@ -1,6 +1,5 @@
 ---
 parent: pageBase
-name: howToUse
 title: "How to use"
 ---
 

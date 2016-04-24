@@ -1,6 +1,5 @@
 ---
 parent: pageBase
-name: getStarted
 title: "Get Started"
 ---
 
