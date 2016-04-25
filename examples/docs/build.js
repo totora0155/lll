@@ -12,7 +12,7 @@ const pages = new Pages('src/pages/**/*.md', {
 //   .then(stream => stream.pipe(lll.dest('public')))
 //   .catch(err => console.error(err));
 
-lll(bases, pages, (err, stream) => {
+lll(bases, pages, {}, (err, stream) => {
   if (err) {
     console.error(err);
   }
