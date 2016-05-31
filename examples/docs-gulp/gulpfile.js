@@ -1,10 +1,10 @@
 const gulp = require('gulp');
 const debug = require('gulp-debug');
-
 const lll = require('../..');
 const Component = lll.Component;
+const Pages = require('./components/pages');
+
 gulp.task('build', () => {
-  const Pages = require('./components/pages');
   const bases = new Component('src/bases/**/*.html');
   const pages = new Pages('src/pages/**/*.md', {
     base: 'src/pages'
