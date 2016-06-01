@@ -1,0 +1,23 @@
+{
+  "name": "docs-gulp",
+  "description": "",
+  "scripts": {
+    "build": "gulp build",
+    "start": "gulp watch"
+  },
+  "author": "nju33",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-debug": "^2.1.2",
+    "html-divide": "^0.1.2",
+    "marked": "^0.3.5"
+  },
+  "dependencies": {
+    "lodash": "^4.6.1",
+    "order-align": "^0.1.1"
+  },
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "keywords": []
+}

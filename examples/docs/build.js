@@ -8,6 +8,8 @@ const pages = new Pages('src/pages/**/*.md', {
   watch: true
 });
 
+console.log(pages);
+
 lll(bases, pages)
   .then(stream => stream.pipe(lll.dest('public')))
   .catch(err => console.error(err));

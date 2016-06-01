@@ -2,7 +2,6 @@
   "name": "lll",
   "version": "1.0.0",
   "dependencies": {
-    "ava": "^0.14.0",
     "chokidar": "^1.4.3",
     "event-stream": "^3.3.2",
     "glob": "^7.0.3",
@@ -10,9 +9,7 @@
     "gray-matter": "^2.0.2",
     "group-from": "^0.3.1",
     "hogan.js": "^3.0.2",
-    "keymirror": "^0.1.1",
     "lodash": "^4.11.1",
-    "lodash.escaperegexp": "^4.1.1",
     "mkdirp": "^0.5.1",
     "order-align": "^0.1.1",
     "redux": "^3.5.1",
@@ -20,14 +17,11 @@
     "strman": "^1.0.1",
     "thenify": "^3.2.0",
     "vinyl": "^1.1.1",
-    "vinyl-fs": "^2.4.3",
-    "xo": "^0.14.0"
+    "vinyl-fs": "^2.4.3"
   },
   "devDependencies": {
     "ava": "^0.14.0",
     "babel-core": "^6.7.4",
-    "babel-eslint": "^6.0.0-beta.5",
-    "babel-plugin-rewire": "^1.0.0-rc-1",
     "babel-plugin-syntax-async-functions": "^6.5.0",
     "babel-plugin-transform-async-to-generator": "^6.5.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.7.4",
@@ -46,20 +40,20 @@
     "gulp-babel": "^6.1.2",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
+    "stream-to-array": "^2.3.0",
     "xo": "^0.14.0"
   },
   "keywords": [],
-  "license": "ISC",
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "build": "gulp babel",
     "start": "gulp watch",
-    "test": "xo"
+    "test": "xo && ava"
   },
   "xo": {
     "env": [
-      "node",
-      "browser"
+      "node"
     ],
     "esnext": true,
     "space": 2,
@@ -70,7 +64,8 @@
   },
   "ava": {
     "files": [
-      "test/**/*.js"
+      "test/**/*.js",
+      "!test/lll.config.js"
     ],
     "require": [
       "babel-register"

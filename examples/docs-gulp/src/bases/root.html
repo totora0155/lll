@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/styles/venders/normalize.css">
+  <link rel="stylesheet" href="/styles/index.css">
+  {{#title}}
+    <title>{{title}} | {{siteName}}</title>
+  {{/title}}
+  {{^title}}
+    <title>{{siteName}}</title>
+  {{/title}}
+  {{&header}}
+</head>
+<body>
+  <header class="header__box">
+    <nav>
+      <ul>
+        <li><h1><a href="/">{{siteName}}</a></h1>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="layout--main">
+    <nav class="nav__box">
+      <ul>
+        {{#state.pages}}
+          <li>
+            <a href="{{url}}">{{title}}</a>
+          </li>
+        {{/state.pages}}
+      </ul>
+    </nav>
+
+    <main class="contents__box">
+      {{&contents}}
+    </main>
+  </div>
+
+  <footer class="footer__box">
+    <small>© 2016 nju33</small>
+  </footer>
+</body>
+</html>
