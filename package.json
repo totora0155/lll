@@ -40,6 +40,7 @@
     "gulp-babel": "^6.1.2",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
+    "stream-to-array": "^2.3.0",
     "xo": "^0.14.0"
   },
   "keywords": [],
@@ -48,7 +49,7 @@
   "scripts": {
     "build": "gulp babel",
     "start": "gulp watch",
-    "test": "xo"
+    "test": "xo && ava"
   },
   "xo": {
     "env": [
@@ -63,7 +64,8 @@
   },
   "ava": {
     "files": [
-      "test/**/*.js"
+      "test/**/*.js",
+      "!test/lll.config.js"
     ],
     "require": [
       "babel-register"

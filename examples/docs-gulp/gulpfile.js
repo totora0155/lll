@@ -14,7 +14,7 @@ gulp.task('build', () => {
     .then(stream => {
       stream
         .pipe(debug())
-        .pipe(lll.dest('public'))
+        .pipe(lll.dest('public'));
     })
     .catch(err => console.error(err));
 });
