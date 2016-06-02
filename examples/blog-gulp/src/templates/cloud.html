@@ -2,9 +2,6 @@
 parent: root
 ---
 
-<p>cloud</p>ajdlfakjdsflaj
-{{#data}}
-  {{#items}}
-    <p>{{name}}</p>
-  {{/items}}
-{{/data}}
+<% _.forEach(items, item => { %>
+  <p><%=item.title%></p>
+<% }) %>

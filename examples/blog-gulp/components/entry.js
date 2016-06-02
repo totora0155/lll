@@ -14,7 +14,7 @@ module.exports = class Entry extends Component {
     ], {
       parent: 'cloud'
     }, {
-      dirname: 'src/posts',
+      dirname: 'src/entries',
       base: 'src',
     });
   }
