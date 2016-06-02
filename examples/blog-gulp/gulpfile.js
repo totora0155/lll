@@ -16,9 +16,9 @@ gulp.task('build', () => {
 
   lll(bases, entries, posts)
     .then(stream => {
-      // stream
-        // .pipe(debug())
-        // .pipe(lll.dest('public'));
+      stream
+        .pipe(debug())
+        .pipe(lll.dest('public'));
     })
     .catch(err => console.error(err));
 });
