@@ -8,11 +8,15 @@ const orderList = [
 
 module.exports = class Entry extends Component {
   ready() {
-    this.setCloud([
+    this.createCloud([
       'tags',
       'categories'
-    ]);
-    // this.setState(['tags', 'categories']);
+    ], {
+      parent: 'cloud'
+    }, {
+      dirname: 'src/posts',
+      base: 'src',
+    });
   }
 
   // order() {

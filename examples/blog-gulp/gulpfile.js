@@ -3,14 +3,14 @@ const debug = require('gulp-debug');
 const lll = require('../..');
 const Component = lll.Component;
 const Entry = require('./components/entry');
-const Post = require('./componentes/post');
+const Post = require('./components/post');
 
 gulp.task('build', () => {
   const bases = new Component('src/bases/**/*.html');
-  const Entry = new Entry('src/entrys/*.md', {
+  const entries = new Entry('src/entries/*.md', {
     base: 'src/entries'
   });
-  const posts = new Pages('src/posts/*.md', {
+  const posts = new Post('src/posts/*.md', {
     base: 'src/posts'
   });
 
