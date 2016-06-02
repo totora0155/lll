@@ -6,6 +6,9 @@ const Entry = require('./components/entry');
 const Post = require('./components/post');
 
 gulp.task('build', () => {
+  const templates = new Component('src/templates/**/*.html', {
+    output: false
+  });
   const bases = new Component('src/bases/**/*.html');
   const entries = new Entry('src/entries/*.md', {
     base: 'src/entries'
@@ -14,7 +17,7 @@ gulp.task('build', () => {
     base: 'src/posts'
   });
 
-  lll(bases, entries, posts)
+  lll(templates, bases, entries, posts)
     .then(stream => {
       stream
         .pipe(debug())
