@@ -11,10 +11,10 @@ gulp.task('build', () => {
   });
   const bases = new Component('src/bases/**/*.html');
   const entries = new Entry('src/entries/*.md', {
-    base: 'src/entries'
+    base: 'src'
   });
   const posts = new Post('src/posts/*.md', {
-    base: 'src/posts'
+    base: 'src'
   });
 
   lll(templates, bases, entries, posts)

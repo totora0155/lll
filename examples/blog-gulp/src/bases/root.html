@@ -4,11 +4,6 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="/styles/venders/normalize.css">
   <link rel="stylesheet" href="/styles/index.css">
-  <% if (title) { %>
-    <title><%=title%> | <%=siteName%></title>
-  <% } else { %>
-    <title><%=siteName%></title>
-  <% } %>
 </head>
 
 <body>
@@ -21,7 +16,7 @@
   </header>
 
     <main class="contents__box">
-      <%-contents%>
+      <%=contents%>
     </main>
   </div>
 
