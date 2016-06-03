@@ -27,6 +27,25 @@ module.exports = class Entry extends Component {
         }
       }
     });
+
+    this.createCloud([
+      'tags',
+      'categories'
+    ]);
+    this.cloud.tags = {
+      data: {
+        parent: 'cloud'
+      },
+      opts: {
+        dirname: 'src/entries',
+        base: 'src',
+        cloud: {
+          title: 'タグ一覧'
+          isolate: true
+        }
+      }
+    };
+    this.cloud.categories = this.cloud.tags;
   }
 
   // order() {
