@@ -16,6 +16,16 @@ module.exports = class Entry extends Component {
     }, {
       dirname: 'src/entries',
       base: 'src',
+      cloud: {
+        title(cloudName) {
+          switch (cloudName) {
+            case 'tags':
+              return 'タグ一覧';
+            case 'categories':
+              return 'カテゴリー一覧';
+          }
+        }
+      }
     });
   }
 
