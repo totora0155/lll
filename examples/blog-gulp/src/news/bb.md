@@ -1,5 +1,5 @@
 ---
-parent: pageBase
+parent: entryBase
 title: bb
 tags:
   - aa

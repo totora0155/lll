@@ -1,5 +1,5 @@
 ---
-parent: pageBase
+parent: entryBase
 title: f
 tags:
   - bar

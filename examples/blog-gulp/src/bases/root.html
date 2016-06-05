@@ -8,20 +8,26 @@
 
 <body>
   <header class="header__box">
-    <nav>
-      <ul>
-        <li><h1><a href="/"><%=siteName%></a></h1>
+    <nav class="header__nav">
+      <ul class="header__list">
+        <li class="header__item">
+          <h1 class="header__title"><a href="/"><%=siteName%></a></h1>
+        </li>
       </ul>
     </nav>
   </header>
 
-    <main class="contents__box">
-      <%=contents%>
-    </main>
+    <div class="wrapper__box">
+      <div class="wrapper__inner">
+        <%=contents%>
+      </div>
+    </div>
   </div>
 
   <footer class="footer__box">
-    <small>© 2016 nju33</small>
+    <div class="footer__inner">
+      <small>© 2016 nju33</small>
+    </div>
   </footer>
 </body>
 </html>

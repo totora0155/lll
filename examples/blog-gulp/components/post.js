@@ -7,12 +7,8 @@ const orderList = [
 ];
 
 module.exports = class Post extends Component {
-  ready() {
-    // this.createCloud([
-    //   'tags',
-    //   'categories'
-    // ]);
-
+  constructor(pattern, opts) {
+    super(pattern, opts);
     this.cloud.tags = {
       data: {
         parent: 'cloud'

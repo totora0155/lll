@@ -7,10 +7,10 @@ const orderList = [
 ];
 
 module.exports = class News extends Component {
-  constructor() {
-    super(...arguments);
-    this.cloud.tags = true
-    this.cloud.categories = true
+  constructor(pattern, opts) {
+    super(pattern, opts);
+    this.cloud.tags = true;
+    this.cloud.categories = true;
   }
 
   compile(content) {

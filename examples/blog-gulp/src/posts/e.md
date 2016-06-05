@@ -1,5 +1,5 @@
 ---
-parent: pageBase
+parent: entryBase
 title: e
 tags:
   - foo

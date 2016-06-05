@@ -1,6 +1,6 @@
 module.exports = {
-  siteName: 'Docs',
-  description: 'docs',
+  siteName: 'Blog with Gulp',
+  description: 'Document Using the Gulp and lll',
   another: 'nju33',
 
   base: 'src',

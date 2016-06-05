@@ -7,8 +7,8 @@ const orderList = [
 ];
 
 module.exports = class Entry extends Component {
-  constructor() {
-    super(...arguments);
+  constructor(pattern, opts) {
+    super(pattern, opts);
     this.cloud.tags = {
       data: {
         parent: 'cloud'
