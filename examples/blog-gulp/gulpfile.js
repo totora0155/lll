@@ -2,16 +2,22 @@ const gulp = require('gulp');
 const debug = require('gulp-debug');
 const lll = require('../..');
 const Component = lll.Component;
+const News = require('./components/news');
 const Entry = require('./components/entry');
 const Post = require('./components/post');
-const Test = require('./components/test');
 
 gulp.task('build', () => {
   const templates = new Component('src/templates/**/*.html', {
     output: false
   });
   const bases = new Component('src/bases/**/*.html');
+  const pages = new Component('src/pages/**/*.html', {
+    base: 'src/pages'
+  });
   const tags = new Component('src/tags/index.html', {
+    base: 'src'
+  });
+  const news = new News('src/news/*.md', {
     base: 'src'
   });
   const entries = new Entry('src/entries/*.md', {
@@ -20,12 +26,8 @@ gulp.task('build', () => {
   const posts = new Post('src/posts/*.md', {
     base: 'src'
   });
-  const tests = new Test('src/tests/*.md', {
-    base: 'src'
-  });
 
-  // lll(templates, bases, entries)
-  lll(templates, bases, tags, entries, posts, tests)
+  lll(templates, bases, pages, tags, news, entries, posts)
     .then(stream => {
       stream
         .pipe(debug())

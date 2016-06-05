@@ -6,7 +6,7 @@ const Component = lll.Component;
 const orderList = [
 ];
 
-module.exports = class Test extends Component {
+module.exports = class News extends Component {
   constructor() {
     super(...arguments);
     this.cloud.tags = true

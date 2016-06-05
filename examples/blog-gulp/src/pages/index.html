@@ -1,0 +1,11 @@
+---
+parent: pageTopBase
+---
+
+<h1>Top</h1>
+
+<% _.forEach(state.template.news, news => { %>
+  <li>
+    <a href="<%= news.url %>"><%= news.title %></a>
+  </li>
+<% }) %>
