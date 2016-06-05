@@ -73,7 +73,7 @@ body {
 .sidebar__inner {
   position: fixed;
   top: 4.7em;
-  height: 90vh;
+  height: 80.5vh;
   padding: 1em;
   overflow: auto;
 }
@@ -96,14 +96,36 @@ body {
   padding-right: 1em;
 }
 
-.footer__box {
+.cloud__box {
+  padding: 1em;
+}
+
+.cloud__headline {
+  border-bottom: 2px solid #333;
+}
+
+.cloud__list {
+  line-height: 2;
+}
+
+.cloud__item {
+  padding-left: 1em;
+  float: left;
+}
+
+.footer__container {
   background: #333;
 }
 
-.footer__inner {
-  width: 800px;
-  height: 2.5em;
+.footer__box {
+  width: 950px;
   margin: 0 auto;
-  background: #f8f8f8;
   text-align: center;
+}
+
+.footer__inner {
+  width: calc(100% - 178.312px);
+  height: 2.5em;
+  margin-left: auto;
+  background: #f8f8f8;
 }

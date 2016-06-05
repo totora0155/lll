@@ -2,6 +2,15 @@
 parent: root
 ---
 
-<% _.forEach(items, item => { %>
-  <p><%=item.title%></p>
-<% }) %>
+<section class="cloud__box">
+  <h1 class="cloud__headline"><%= title %></h1>
+
+  <ul class="cloud__list">
+    <% _.forEach(items, item => { %>
+      <li class="cloud__item">
+        <a href="<%=item.url%>"><%=item.name%></a>
+      </li>
+    <% }) %>
+  </ul>
+
+</section>
