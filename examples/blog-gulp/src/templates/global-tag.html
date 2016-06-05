@@ -1,0 +1,11 @@
+---
+parent: root
+---
+
+<p>TAGS</p>
+
+<% _.forEach(items, item => { %>
+  <li>
+    <a href="<%=item.url%>"><%=item.name%></a>
+  </li>
+<% }) %>
