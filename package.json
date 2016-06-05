@@ -5,6 +5,7 @@
     "chokidar": "^1.4.3",
     "event-stream": "^3.3.2",
     "glob": "^7.0.3",
+    "glob-base": "^0.3.0",
     "glob2base": "0.0.12",
     "gray-matter": "^2.0.2",
     "group-from": "^0.3.1",

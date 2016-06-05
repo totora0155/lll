@@ -4,20 +4,28 @@ const lll = require('../..');
 const Component = lll.Component;
 const Entry = require('./components/entry');
 const Post = require('./components/post');
+const Test = require('./components/test');
 
 gulp.task('build', () => {
   const templates = new Component('src/templates/**/*.html', {
     output: false
   });
   const bases = new Component('src/bases/**/*.html');
+  const tags = new Component('src/tags/index.html', {
+    base: 'src'
+  });
   const entries = new Entry('src/entries/*.md', {
     base: 'src'
   });
   const posts = new Post('src/posts/*.md', {
     base: 'src'
   });
+  const tests = new Test('src/tests/*.md', {
+    base: 'src'
+  });
 
-  lll(templates, bases, entries, posts)
+  // lll(templates, bases, entries)
+  lll(templates, bases, tags, entries, posts, tests)
     .then(stream => {
       stream
         .pipe(debug())

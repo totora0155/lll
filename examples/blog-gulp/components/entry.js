@@ -7,46 +7,59 @@ const orderList = [
 ];
 
 module.exports = class Entry extends Component {
-  ready() {
-    this.createCloud([
-      'tags',
-      'categories'
-    ], {
-      parent: 'cloud'
-    }, {
-      dirname: 'src/entries',
-      base: 'src',
-      cloud: {
-        title(cloudName) {
-          switch (cloudName) {
-            case 'tags':
-              return 'タグ一覧';
-            case 'categories':
-              return 'カテゴリー一覧';
-          }
-        }
-      }
-    });
-
-    this.createCloud([
-      'tags',
-      'categories'
-    ]);
+  constructor() {
+    super(...arguments);
     this.cloud.tags = {
       data: {
         parent: 'cloud'
       },
       opts: {
-        dirname: 'src/entries',
-        base: 'src',
         cloud: {
-          title: 'タグ一覧'
+          title: 'タグ一覧',
           isolate: true
         }
       }
     };
-    this.cloud.categories = this.cloud.tags;
+    this.cloud.categories = {
+      data: {
+        parent: 'cloud'
+      },
+      opts: {
+        cloud: {
+          title: 'カテゴリー一覧',
+          isolate: true
+        }
+      }
+    };
   }
+  // ready() {
+    // this.createCloud([
+    //   'tags',
+    //   'categories'
+    // ], {
+    //   parent: 'cloud'
+    // }, {
+    //   dirname: 'src/entries',
+    //   base: 'src',
+    //   cloud: {
+    //     title(cloudName) {
+    //       switch (cloudName) {
+    //         case 'tags':
+    //           return 'タグ一覧';
+    //         case 'categories':
+    //           return 'カテゴリー一覧';
+    //       }
+    //     }
+    //   }
+    // });
+
+    // this.createCloud([
+    //   'tags',
+    //   'categories'
+    // ]);
+
+
+  // }
 
   // order() {
   //   this.templates = lll.order(orderList, this.templates);

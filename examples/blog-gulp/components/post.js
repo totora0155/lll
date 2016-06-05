@@ -8,15 +8,33 @@ const orderList = [
 
 module.exports = class Post extends Component {
   ready() {
-    this.createCloud([
-      'tags',
-      'categories'
-    ], {
-      parent: 'cloud'
-    }, {
-      dirname: 'src/posts',
-      base: 'src',
-    });
+    // this.createCloud([
+    //   'tags',
+    //   'categories'
+    // ]);
+
+    this.cloud.tags = {
+      data: {
+        parent: 'cloud'
+      },
+      opts: {
+        cloud: {
+          title: 'タグ一覧',
+          isolate: true
+        }
+      }
+    };
+    this.cloud.categories = {
+      data: {
+        parent: 'cloud'
+      },
+      opts: {
+        cloud: {
+          title: 'カテゴリー一覧',
+          isolate: true
+        }
+      }
+    };
   }
 
   // order() {
