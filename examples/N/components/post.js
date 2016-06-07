@@ -3,9 +3,6 @@ const marked = require('marked');
 const lll = require('../../..');
 const Component = lll.Component;
 
-const orderList = [
-];
-
 module.exports = class Post extends Component {
   constructor(pattern, opts) {
     super(pattern, opts);

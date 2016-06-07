@@ -1,6 +1,6 @@
 ---
 parent: entryBase
-title: aaaasdf
+title: aa
 tags:
   - ss
   - aa
