@@ -1,0 +1,33 @@
+---
+parent: root
+---
+
+<div class="sidebar__box">
+  <div class="sidebar__inner">
+    <seciton>
+      <h3>タグ一覧</h3>
+      <ul>
+        <% _.forEach(state.cloud.tags, tag => { %>
+          <li>
+            <a href="<%= tag.url %>"><%= tag.title %></a>
+          </li>
+        <% }) %>
+      </ul>
+    </section>
+
+    <section>
+      <h3>カテゴリー一覧</h3>
+      <ul>
+        <% _.forEach(state.cloud.categories, category => { %>
+          <li>
+            <a href="<%= category.url %>"><%= category.title %></a>
+          </li>
+        <% }) %>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<main class="main__box">
+  <%=contents%>
+</main>

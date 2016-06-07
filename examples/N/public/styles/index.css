@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+body {
+  font: 15px / 1.55 "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "ＭＳ ゴシック", sans-serif;
+}
+
+.header__box {
+  position: relative;
+  z-index: 1;
+  height: 2.5em
+}
+
+.header__nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 2.5em;
+  background: #333;
+  line-height: 1.9;
+}
+
+.header__list {
+  width: 950px;
+  margin: 0 auto;
+}
+
+.header__title {
+  display: inline-block;
+  background: #f8f8f8;
+  margin: 0;
+  font-size: 1.3em;
+}
+
+.header__title a {
+  display: block;
+  padding: 1em;
+}
+
+.wrapper__box {
+  background: #333;
+}
+
+.wrapper__inner {
+  position: relative;
+  display: table;
+  width: 950px;
+  min-height: calc(100vh - 5em);
+  margin: 0 auto;
+  background: #f8f8f8;
+}
+
+.sidebar__box {
+  display: table-cell;
+  width: 30%;
+}
+
+.sidebar__inner {
+  position: fixed;
+  top: 4.7em;
+  height: 80.5vh;
+  padding: 1em;
+  overflow: auto;
+}
+
+.main__box {
+  display: table-cell;
+  width: 70%;
+  padding-top: 1em;
+}
+
+.section__headline {
+  border-bottom: 2px solid #333;
+}
+
+.section__list {
+  padding-left: 1em;
+}
+
+.article__body {
+  padding-right: 1em;
+}
+
+.cloud__box {
+  padding: 1em;
+}
+
+.cloud__headline {
+  border-bottom: 2px solid #333;
+}
+
+.cloud__list {
+  line-height: 2;
+}
+
+.cloud__item {
+  padding-left: 1em;
+  float: left;
+}
+
+.footer__container {
+  background: #333;
+}
+
+.footer__box {
+  width: 950px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer__inner {
+  width: calc(100% - 178.312px);
+  height: 2.5em;
+  margin-left: auto;
+  background: #f8f8f8;
+}

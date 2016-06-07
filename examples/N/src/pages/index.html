@@ -1,0 +1,36 @@
+---
+parent: pageTopBase
+---
+
+<section class="section__box">
+  <h1 class="section__headline">News</h1>
+  <ul class="section__list">
+    <% _.forEach(state.template.news, news => { %>
+      <li>
+        <a href="<%= news.url %>"><%= news.title %></a>
+      </li>
+    <% }) %>
+  </ul>
+</section>
+
+<section class="section__box">
+  <h1 class="section__headline">Entries</h1>
+  <ul class="section__list">
+    <% _.forEach(state.template.entry, entry => { %>
+      <li>
+        <a href="<%= entry.url %>"><%= entry.title %></a>
+      </li>
+    <% }) %>
+  </ul>
+</section>
+
+<section class="section__box">
+  <h1 class="section__headline">Posts</h1>
+  <ul class="section__list">
+    <% _.forEach(state.template.post, post => { %>
+      <li>
+        <a href="<%= post.url %>"><%= post.title %></a>
+      </li>
+    <% }) %>
+  </ul>
+</section>

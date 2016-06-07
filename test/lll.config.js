@@ -9,6 +9,10 @@ module.exports = {
     'tags'
   ],
 
+  cloud: {
+    parent: 'dummy'
+  },
+
   separator: '|',
   token: {
     header: '<!-- more -->',
