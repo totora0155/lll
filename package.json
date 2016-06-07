@@ -22,7 +22,7 @@
     "vinyl-fs": "^2.4.3"
   },
   "devDependencies": {
-    "ava": "^0.14.0",
+    "ava": "^0.15.2",
     "babel-core": "^6.7.4",
     "babel-plugin-syntax-async-functions": "^6.5.0",
     "babel-plugin-transform-async-to-generator": "^6.5.0",
@@ -44,7 +44,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "stream-to-array": "^2.3.0",
-    "xo": "^0.14.0"
+    "xo": "^0.15.1"
   },
   "keywords": [],
   "license": "MIT",
