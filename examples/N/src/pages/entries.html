@@ -1,0 +1,14 @@
+---
+parent: pageTopBase
+---
+
+<section class="section__box">
+  <h1 class="section__headline">Entries</h1>
+  <ul class="section__list">
+    <% _.forEach(count(state.template.entry, 2), entry => { %>
+      <li>
+        <a href="<%= entry.url %>"><%= entry.title %></a>
+      </li>
+    <% }) %>
+  </ul>
+</section>
