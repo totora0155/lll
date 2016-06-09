@@ -9,4 +9,10 @@ parent: pageBase
   <div class="article__body">
     <%= contents %>
   </div>
+  <footer>
+    <nav>
+      <a href="<%= rel.prev.url %>"><%= rel.prev.title %></a>
+      <a href="<%= rel.next.url %>"><%= rel.next.title %></a>
+    </nav>
+  </footer>
 </article>
