@@ -11,4 +11,12 @@ parent: pageTopBase
       </li>
     <% }) %>
   </ul>
+
+  <% if (hasPrevPage()) { %>
+    <a href="<%= page.prev.url %>">←<%= page.prev.title %></a>
+  <% } %>
+
+  <% if (hasNextPage()) { %>
+    <a href="<%= page.next.url %>"><%= page.next.title %>→</a>
+  <% } %>
 </section>
