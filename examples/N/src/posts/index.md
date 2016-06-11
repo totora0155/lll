@@ -1,6 +1,6 @@
 ---
-parent: pageBase
-title: index
+parent: entryBase
+title: hoooo
 tags:
   - index
   - content

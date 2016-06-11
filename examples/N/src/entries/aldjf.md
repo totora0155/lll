@@ -1,5 +1,5 @@
 ---
-parent: pageBase
+parent: entryBase
 title: adf
 tags:
   - hoge
