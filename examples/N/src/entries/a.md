@@ -1,6 +1,6 @@
 ---
 parent: entryBase
-title: asdklfj
+title: a
 tags:
   - foo
   - bar
