@@ -1,6 +1,6 @@
 ---
-parent: pageBase
-title: index
+parent: entryBase
+title: adf
 tags:
   - hoge
   - content

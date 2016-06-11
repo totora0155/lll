@@ -9,4 +9,14 @@ parent: pageBase
   <div class="article__body">
     <%= contents %>
   </div>
+  <footer>
+    <nav>
+      <% if (prevItem) { %>
+        <a href="<%= prevItem.url %>"><%= prevItem.title %></a>
+      <% } %>
+      <% if (nextItem) { %>
+        <a href="<%= nextItem.url %>"><%= nextItem.title %></a>
+      <% } %>
+    </nav>
+  </footer>
 </article>
