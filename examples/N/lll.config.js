@@ -1,5 +1,5 @@
 module.exports = {
-  siteName: 'Blog with Gulp',
+  sitename: 'Blog with Gulp',
   description: 'Document Using the Gulp and lll',
   another: 'nju33',
 

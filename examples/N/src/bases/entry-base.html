@@ -11,11 +11,11 @@ parent: pageBase
   </div>
   <footer>
     <nav>
-      <% if (hasPrevRel()) { %>
-        <a href="<%= rel.prev.url %>"><%= rel.prev.title %></a>
+      <% if (prevItem) { %>
+        <a href="<%= prevItem.url %>"><%= prevItem.title %></a>
       <% } %>
-      <% if (hasNextRel()) { %>
-        <a href="<%= rel.next.url %>"><%= rel.next.title %></a>
+      <% if (nextItem) { %>
+        <a href="<%= nextItem.url %>"><%= nextItem.title %></a>
       <% } %>
     </nav>
   </footer>
