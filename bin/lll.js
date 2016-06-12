@@ -2,7 +2,6 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const _ = require('lodash');
 const uuid = require('node-uuid');
 const inquirer = require('inquirer');
 const moment = require('moment');
