@@ -1,6 +1,19 @@
 {
   "name": "lll",
   "version": "1.0.0",
+  "ava": {
+    "files": [
+      "test/**/*.js",
+      "!test/lll.config.js"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "bin": {
+    "lll": "bin/lll.js"
+  },
   "dependencies": {
     "chokidar": "^1.4.3",
     "event-stream": "^3.3.2",
@@ -10,9 +23,12 @@
     "gray-matter": "^2.0.2",
     "group-from": "^0.3.1",
     "hogan.js": "^3.0.2",
+    "inquirer": "^1.0.3",
     "keymirror": "^0.1.1",
     "lodash": "^4.11.1",
     "mkdirp": "^0.5.1",
+    "moment": "^2.13.0",
+    "node-uuid": "^1.4.7",
     "order-align": "^0.1.1",
     "redux": "^3.5.1",
     "redux-thunk": "^2.0.1",
@@ -43,6 +59,7 @@
     "gulp-babel": "^6.1.2",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
+    "meow": "^3.7.0",
     "stream-to-array": "^2.3.0",
     "xo": "^0.15.1"
   },
@@ -64,15 +81,5 @@
       "es/**",
       "build/**"
     ]
-  },
-  "ava": {
-    "files": [
-      "test/**/*.js",
-      "!test/lll.config.js"
-    ],
-    "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
   }
 }

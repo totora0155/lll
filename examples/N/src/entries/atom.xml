@@ -1,0 +1,26 @@
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
+  <title><%=config.sitename%></title>
+  <subtitle><%=config.subtitle%></subtitle>
+  <link href="<%=config.siteurl%>"/>
+  <author>
+    <name><%=config.author%></name>
+  </author>
+  <updated><%=now%></updated>
+  <generator uri="https://github.com/totora0155/lll" version="<%=lll.version%>">nju33/totora0155/lll</generator>
+  <id><%=atomId%></id>
+
+  <% _.forEach(state.template.entry, item => { %>
+    <entry>
+      <title><%=item.title%></title>
+      <link href="<%=item.url%>"/>
+      <author>
+        <name><%=item.author || config.author%></name>
+      </author>
+      <published><%=item.published%></updated>
+      <updated><%=item.updated%></updated>
+      <summary type="html"><%=item.summary%></summary>
+      <content type="html"><%=item.headContents%></content>
+      <id><%=item.atomId%></id>
+    </entry>
+  <% }); %>
+</feed>

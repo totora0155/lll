@@ -4,7 +4,7 @@ parent: pageBase
 
 <article class="article__box">
   <header>
-    <h1 class="article__headline"><%= title %></h1>
+    <h1 class="article__headline"><%= pageTitle %></h1>
   </header>
   <div class="article__body">
     <%= contents %>
@@ -12,10 +12,10 @@ parent: pageBase
   <footer>
     <nav>
       <% if (prevItem) { %>
-        <a href="<%= prevItem.url %>"><%= prevItem.title %></a>
+        <a href="<%= prevItem.url %>"><%= prevItem.pageTitle %></a>
       <% } %>
       <% if (nextItem) { %>
-        <a href="<%= nextItem.url %>"><%= nextItem.title %></a>
+        <a href="<%= nextItem.url %>"><%= nextItem.pageTitle %></a>
       <% } %>
     </nav>
   </footer>
