@@ -10,7 +10,7 @@ parent: root
         <ul>
           <% _.forEach(state.cloud.entry.tags, tag => { %>
             <li>
-              <a href="<%= tag.url %>"><%= tag.title %></a>
+              <a href="<%= tag.url %>"><%= tag.pageTitle %></a>
             </li>
           <% }) %>
         </ul>
@@ -20,7 +20,7 @@ parent: root
         <ul>
           <% _.forEach(state.cloud.entry.categories, category => { %>
             <li>
-              <a href="<%= category.url %>"><%= category.title %></a>
+              <a href="<%= category.url %>"><%= category.pageTitle %></a>
             </li>
           <% }) %>
         </ul>
@@ -31,7 +31,7 @@ parent: root
         <ul>
           <% _.forEach(state.cloud.post.tags, tag => { %>
             <li>
-              <a href="<%= tag.url %>"><%= tag.title %></a>
+              <a href="<%= tag.url %>"><%= tag.pageTitle %></a>
             </li>
           <% }) %>
         </ul>
@@ -41,7 +41,7 @@ parent: root
         <ul>
           <% _.forEach(state.cloud.post.categories, category => { %>
             <li>
-              <a href="<%= category.url %>"><%= category.title %></a>
+              <a href="<%= category.url %>"><%= category.pageTitle %></a>
             </li>
           <% }) %>
         </ul>
@@ -52,7 +52,7 @@ parent: root
         <ul>
           <% _.forEach(state.cloud.tags, tag => { %>
             <li>
-              <a href="<%= tag.url %>"><%= tag.title %></a>
+              <a href="<%= tag.url %>"><%= tag.pageTitle %></a>
             </li>
           <% }) %>
         </ul>
@@ -62,7 +62,7 @@ parent: root
         <ul>
           <% _.forEach(state.cloud.categories, category => { %>
             <li>
-              <a href="<%= category.url %>"><%= category.title %></a>
+              <a href="<%= category.url %>"><%= category.pageTitle %></a>
             </li>
           <% }) %>
         </ul>

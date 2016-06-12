@@ -19,7 +19,7 @@
       <published><%=item.published%></updated>
       <updated><%=item.updated%></updated>
       <summary type="html"><%=item.summary%></summary>
-      <content type="html"><%=item.content%></content>
+      <content type="html"><%=item.headContents%></content>
       <id><%=item.atomId%></id>
     </entry>
   <% }); %>
