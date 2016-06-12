@@ -1,7 +1,11 @@
 module.exports = {
-  sitename: 'Blog with Gulp',
-  description: 'Document Using the Gulp and lll',
+  lang: 'ja',
+  sitename: 'N',
+  subtitle: 'Noop',
+  siteurl: 'http://localhost:3000/',
   another: 'nju33',
+
+  atomId: 'nju33//N',
 
   base: 'src',
   cloud: {

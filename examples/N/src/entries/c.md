@@ -1,6 +1,7 @@
 ---
 parent: entryBase
 title: csdfjadjf
+summary: lajdflasdkfjas
 tags:
   - baz
   - qux

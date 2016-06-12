@@ -15,20 +15,17 @@ gulp.task('build', () => {
     base: 'src/pages',
     cache: false
   });
-  const news = new News('src/news/*.md', {
+  const news = new News('src/news/*.md', {base: 'src'});
+  const entries = new Entry('src/entries/*.md', {base: 'src'});
+  const posts = new Post('src/posts/*.md', {base: 'src'});
+  const atoms = new Component('src/**/atom.xml', {
     base: 'src',
-    atom: 'global'
-  });
-  const entries = new Entry('src/entries/*.md', {
-    base: 'src',
-    atom: 'isolate'
-  });
-  const posts = new Post('src/posts/*.md', {
-    base: 'src',
-    atom: 'isolate'
+    cache: false,
+    cleanURL: false,
+    extname: '.xml'
   });
 
-  lll(templates, bases, pages, news, entries, posts)
+  lll(templates, bases, pages, news, entries, posts, atoms)
     .then(stream => {
       stream
         .pipe(debug())
