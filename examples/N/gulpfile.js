@@ -14,9 +14,6 @@ gulp.task('build', () => {
   const pages = new Component('src/pages/**/*.html', {
     base: 'src/pages'
   });
-  const tags = new Component('src/tags/index.html', {
-    base: 'src'
-  });
   const news = new News('src/news/*.md', {
     base: 'src'
   });
@@ -27,7 +24,7 @@ gulp.task('build', () => {
     base: 'src'
   });
 
-  lll(templates, bases, pages, tags, news, entries, posts)
+  lll(templates, bases, pages, news, entries, posts)
     .then(stream => {
       stream
         .pipe(debug())
