@@ -6,8 +6,8 @@ const _ = require('lodash');
 const uuid = require('node-uuid');
 const inquirer = require('inquirer');
 const moment = require('moment');
-const meow = require('meow');
 const matter = require('gray-matter');
+const meow = require('meow');
 const cli = meow(`
   Usage
     $ lll <command>
@@ -46,7 +46,6 @@ filePath required
     process.exit(1);
   }
   const filePath = path.join(process.cwd(), relative);
-  console.log(filePath);
   return new Promise(resolve => {
     inquire().then(answers => {
       const data = Object.assign({}, {uuid: uuid.v1()}, answers);
