@@ -16,13 +16,16 @@ gulp.task('build', () => {
     cache: false
   });
   const news = new News('src/news/*.md', {
-    base: 'src'
+    base: 'src',
+    atom: 'global'
   });
   const entries = new Entry('src/entries/*.md', {
-    base: 'src'
+    base: 'src',
+    atom: 'isolate'
   });
   const posts = new Post('src/posts/*.md', {
-    base: 'src'
+    base: 'src',
+    atom: 'isolate'
   });
 
   lll(templates, bases, pages, news, entries, posts)

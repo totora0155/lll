@@ -1,0 +1,31 @@
+<% if (config.lang) { %>
+  <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
+<% } else { %>
+  <feed xmlns="http://www.w3.org/2005/Atom">
+<% } %>
+
+  <title><%=config.sitename || ""%></title>
+  <subtitle><%=config.subtitle || ""%></subtitle>
+  <link href="<%=config.siteurl || ''%>"/>
+  <author>
+    <name><%=config.author || ""%></name>
+  </author>
+  <updated><%=now%></updated>
+  <generator uri="https://github.com/totora0155/lll" version="<%=pkg.version || ''%>">nju33/totora0155/lll</generator>
+  <id><%=either("", atomId)%></id>
+
+  <% _.forEach(items, item => { %>
+    <entry>
+      <title><%=item.title || ""%></title>
+      <link href="<%=item.url || ''%>"/>
+      <author>
+        <name><%=item.author || config.author || ""%></name>
+      </author>
+      <published><%=item.published || now%></updated>
+      <updated><%=item.updated || now%></updated>
+      <summary><%=item.summary || ""%></summary>
+      <content><%=item.content || ""%></summary>
+      <id><%=item.atomId || ""%></id>
+    </entry>
+  <% }); %>
+</feed>
