@@ -12,7 +12,8 @@ gulp.task('build', () => {
   });
   const bases = new Component('src/bases/**/*.html');
   const pages = new Component('src/pages/**/*.html', {
-    base: 'src/pages'
+    base: 'src/pages',
+    cache: false
   });
   const news = new News('src/news/*.md', {
     base: 'src'
