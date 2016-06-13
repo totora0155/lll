@@ -2,6 +2,7 @@
   "name": "docs-gulp",
   "description": "",
   "scripts": {
+    "new:entry": "lll new src/entries",
     "build": "gulp build",
     "start": "gulp watch"
   },
@@ -14,6 +15,7 @@
     "marked": "^0.3.5"
   },
   "dependencies": {
+    "lll": "file:../..",
     "lodash": "^4.6.1",
     "order-align": "^0.1.1"
   },

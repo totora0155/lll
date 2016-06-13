@@ -40,7 +40,7 @@ function createFile(relative) {
   if (!relative) {
     console.log(`
 filePath required
-  $ lll new <filePath>
+  $ lll new <fileDirPath>
 `);
     process.exit(1);
   }
@@ -58,6 +58,17 @@ filePath required
 function inquire() {
   return new Promise(resolve => {
     inquirer.prompt([
+      {
+        name: 'filename',
+        message: '* filename',
+        default: '',
+        validate(input) {
+          if (input === '') {
+            return 'filename was reqired';
+          }
+          return true;
+        }
+      },
       {
         name: 'parent',
         message: 'parent',
