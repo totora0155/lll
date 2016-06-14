@@ -15,9 +15,18 @@ gulp.task('build', () => {
     base: 'src/pages',
     cache: false
   });
-  const news = new News('src/news/*.md', {base: 'src'});
-  const entries = new Entry('src/entries/*.md', {base: 'src'});
-  const posts = new Post('src/posts/*.md', {base: 'src'});
+  const news = new News('src/news/*.md', {
+    base: 'src',
+    json: true
+  });
+  const entries = new Entry('src/entries/*.md', {
+    base: 'src',
+    json: true
+  });
+  const posts = new Post('src/posts/*.md', {
+    base: 'src',
+    json: true
+  });
   const atoms = new Component('src/**/atom.xml', {
     base: 'src',
     cache: false,
