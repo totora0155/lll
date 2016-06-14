@@ -90,7 +90,10 @@ filePath required
   const filePath = path.join(process.cwd(), relative);
   return new Promise(resolve => {
     inquire().then((filename, answers) => {
-      const data = Object.assign({}, {uuid: uuid.v1()}, answers);
+      const data = Object.assign({}, {
+        uuid: uuid.v1(),
+        eyecatching: ''
+      }, answers);
       const contents = matter.stringify('', data);
       fs.writeFileSync(filePath, contents);
       console.log(`${filename} was created`);
