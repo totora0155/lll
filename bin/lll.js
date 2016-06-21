@@ -49,29 +49,29 @@ function createConfigFile() {
 module.exports = {
   atomId: '${uuid.v1()}',
 
-  # for develop
+  // for develop
   base: 'base directory of source codes'
 
-  # for site
+  // for site
   sitename: 'site name',
   subtitle: 'subtitle of your site',
   siteurl: 'site url',
   author: 'your name',
 
-  # for pages
-  # symbol between page name and site name
-  # e.g.) page name - site name
+  // for pages
+  // symbol between page name and site name
+  // e.g.) page name - site name
   titleToken: ' - ',
-  # symbol of use to separate at the beginning
+  // symbol of use to separate at the beginning
   headToken: '<!-- more -->',
-  # symbol of use to separate pages
+  // symbol of use to separate pages
   pageToken: '<!-- break -->',
 
-  # defaults for cloud
-  #cloud: {
-  #  path: 'path that would have been placed',
-  #  parent: 'default parent name'
-  #}
+  // defaults for cloud
+  //cloud: {
+  //  path: 'path that would have been placed',
+  //  parent: 'default parent name'
+  //}
 };
 
 `.trim();
