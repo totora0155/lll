@@ -50,7 +50,7 @@ module.exports = {
   atomId: '${uuid.v1()}',
 
   // for develop
-  base: 'base directory of source codes'
+  base: 'base directory of source codes',
 
   // for site
   sitename: 'site name',
